@@ -113,7 +113,7 @@ const Header = () => {
 
                     <Dropdown.Menu>
                       <div>
-                        <h6>Find doctor by city</h6>
+                        <h6>Find doctor by name</h6>
 
                         <div className='doclist'>
                           <p><Link to='/islamabad'>Islamabad</Link></p>
