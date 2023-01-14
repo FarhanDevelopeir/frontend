@@ -10,7 +10,13 @@ import pic from '../images/istockphoto-174674040-612x612.jpg';
 import check from '../images/check-mark.png'
 // import Pic from '../images/istockphoto-174674040-612x612.jpg';
 // import picture from '../images/ashkan-forouzani-DPEPYPBZpB8-unsplash.jpg';
+import Select from 'react-select'
 
+const options = [
+  { value: 'Islamabad', label: 'Islamabad' },
+  { value: 'Rawalpindi', label: 'Rawalpindi' },
+  
+]
 
 const Main = () => {
   return (
@@ -22,7 +28,8 @@ const Main = () => {
           <div className='heading d-xl-none d-lg-none d-md-none d-sm-block d-block' style={{ marginTop: '100px' }}><h4>Book <span style={{ color: '#ff9e15' }}>best doctors </span> near you</h4></div>
 
           <div className='location'>
-            <input type='text' className='location-bar' placeholder='Enter City' style={{ marginTop: '30px'}} />
+            {/* <input type='text' className='location-bar' placeholder='Enter City' style={{ marginTop: '30px'}} /> */}
+            <Select className='select' placeholder='Select City' options={options} />
           </div>
           <div className='Search'>
             <input type='text' className='search-bar' placeholder='Search for doctors & hospitals' style={{ marginTop: '30px' }} />
@@ -30,146 +37,7 @@ const Main = () => {
           </div>
           
           </div>
-          {/* <div className='boxes'>
-
-             
-
-        <div class="container-fluid mt-5 mb-4 d-none d-md-block d-lg-block d-xl-block">
-        <div class="row">
-            <div class="col-md-6 col-lg-5 ms-3">
-                <div class="card mx-30 " >
-                  <img src={pic} class="card-img-top d-xl-none d-md-none d-lg-block"   alt="..."/>
-                  <img src={pic} class="card-img-top d-xl-none d-md-block d-lg-none d-none" style={{ width:'260px'}} alt="..."/>
-                  <img src={pic} class="card-img-top d-xl-block d-sm-none d-md-none d-none" style={{ width:'230px'}} alt="..."/>
-                  <div class="card-body">
-                    <h6 class="card-title" style={{color:'black'}}>
-Book Emergency Ward</h6>
-
-<p class="card-text">
-100+ PMC Verified Doctors</p>
-<button className='box-button'>Book Now</button>
-</div>
-</div>
-</div>
-<div class="col-md-6 col-lg-5 ms-3 " >
-                <div class="card mx-30 ">
-                  <img src={picture} class="card-img-top d-xl-none d-md-none d-lg-block "  alt="..."/>
-                  <img src={picture} class="card-img-top d-xl-none d-md-block d-lg-none d-none " style={{ width:'260px'}} alt="..."/>
-                  <img src={picture} class="card-img-top d-xl-block d-sm-none d-md-none d-none" style={{ width:'230px'}} alt="..."/>
-                  <div class="card-body">
-                    <h6 class="card-title" style={{color:'black'}}>
-book Appointment</h6>
-
-<p class="card-text">
-100+ PMC Verified Doctors</p>
-<button className='box-button'>Book Now</button>
-</div>
-</div>
-</div>
-
-</div>
-</div>
-
-
-<div class="container-fluid mt-5 mb-4  d-block d-md-none d-lg-none d-xl-none "  >
-        <div class="row">
-            <div class=" ms-3  d-inline">
-                <div class="card mx-30 d-inline" >
-                  <img src={Pic} class="card-img-top d-xl-none d-md-none d-lg-block d-none d-sm-none"  alt="..."/>
-                  <img src={Pic} class="card-img-top d-xl-none d-md-block d-lg-none d-none d-sm-none" style={{ width:'260px',height:'200px'}} alt="..."/>
-                  <img src={Pic} class="card-img-top d-xl-block d-sm-none d-md-none d-none d-lg-none " style={{ width:'260px'}} alt="..."/>
-                  <img src={Pic} class="card-img-top d-xl-none d-sm-block d-md-none d-block d-lg-none" style={{width:'230px'}}  alt="..."/>
-
-                  <div class="card-body">
-                    <h5 class="card-title">
-Julia Thorn</h5>
-<h6>
-Junior Developer</h6>
-<p class="card-text">
-100+ PMC Verified Doctors</p>
-<button className='box-button'>Book Now</button>
-</div>
-</div>
-</div>
-<div class=" ms-3 d-inline " >
-                <div class="card mx-30 d-inline">
-                  <img src={pic} class="card-img-top d-xl-none d-md-none d-lg-block d-none"  alt="..."/>
-                  <img src={pic} class="card-img-top d-xl-none d-md-block d-lg-none d-none " style={{ width:'260px',height:'200px'}} alt="..."/>
-                  <img src={pic} class="card-img-top d-xl-block d-sm-none d-md-none d-none" style={{ width:'260px'}} alt="..."/>
-                  <img src={Pic} class="card-img-top d-xl-none d-sm-block d-md-none d-block"  alt="..."/>
-
-                  <div class="card-body">
-                    <h5 class="card-title">
-Martha David</h5>
-<h6>
-UI / UX Designer</h6>
-<p class="card-text">
-100+ PMC Verified Doctors</p>
-<button className='box-button'>Book Now</button>
-</div>
-</div>
-</div>
-
-</div>
-</div>
-
-
-
-
-
-
-
-
-
-
-            </div> */}
-
-
-
-          {/* <div class="container d-none d-sm-none d-md-none d-lg-block d-xl-block">
-        <div class="row">
-            <div class="col-lg-5 mb-4 mt-4">
-                <div class="card ">
-                    <img class="card-img-top" src={pic}  alt=""/>
-  
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">
-                            Some quick example text to build on 
-                            the card title and make up the bulk 
-                            of the card's content.
-                        </p>
-  
-                        <a href="#" class="btn btn-outline-primary btn-sm">
-                            Card link
-                        </a>
-                        <a href="#" class="btn btn-outline-secondary btn-sm">
-                            <i class="far fa-heart"></i></a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-5 mb-4 mt-4">
-                <div class="card">
-                    <img class="card-img-top" src={Pic} alt=""/>
-  
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">
-                            Some quick example text to build on the 
-                            card title and make up the bulk of the 
-                            card's content.
-                        </p>
-                          
-                        <a href="#" class="btn btn-outline-primary btn-sm">
-                            Card link
-                        </a>
-                        <a href="#" class="btn btn-outline-secondary btn-sm">
-                            <i class="far fa-heart"></i></a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div> */}
+          
           <Row className='rrow w-100 m-auto '  >
             <Col className='box d-flex '  >
               <div>

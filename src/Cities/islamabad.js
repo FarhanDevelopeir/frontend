@@ -10,6 +10,7 @@ import { Button } from 'react-bootstrap'
 import map from '../images/8350944451595341180-128.png'
 import doc from '../images/12336740611595341300-128.png'
 import './islamabad.css'
+import { Link } from 'react-router-dom'
 
 
 const Islamabad = () => {
@@ -41,7 +42,7 @@ const Islamabad = () => {
                     <div className='text my-auto'>
                         <h2>Al-Shifa Hospital</h2>
                         <h6>F-8 Centorus Mall Islamabad</h6>
-                        <Button>View details</Button>
+                        <Link to='/Shifa' ><Button>View details</Button></Link>
 
                     </div>
                 </div>
@@ -70,7 +71,8 @@ const Islamabad = () => {
                     <div className='text my-auto'>
                         <h2>Al-Shifa Hospital</h2>
                         <h6>F-8 Centorus Mall Islamabad</h6>
-                        <Button className='btn'>View details</Button>
+                        <Link to='/Shifa' ><Button>View details</Button></Link>
+
 
                     </div>
                 </div>
@@ -101,7 +103,8 @@ const Islamabad = () => {
                     <div className='text my-auto'>
                         <h2>Al-Shifa Hospital</h2>
                         <h6>F-8 Centorus Mall Islamabad</h6>
-                        <Button>View details</Button>
+                        <Link to='/Shifa' ><Button>View details</Button></Link>
+
 
                     </div>
                 </div>
@@ -130,7 +133,8 @@ const Islamabad = () => {
                     <div className='text my-auto'>
                         <h2>Al-Shifa Hospital</h2>
                         <h6>F-8 Centorus Mall Islamabad</h6>
-                        <Button>View details</Button>
+                        <Link to='/Shifa' ><Button>View details</Button></Link>
+
 
                     </div>
                 </div>
@@ -161,7 +165,8 @@ const Islamabad = () => {
                     <div className='text my-auto'>
                         <h2>Al-Shifa Hospital</h2>
                         <h6>F-8 Centorus Mall Islamabad</h6>
-                        <Button>View details</Button>
+                        <Link to='/Shifa' ><Button>View details</Button></Link>
+
 
                     </div>
                 </div>
@@ -190,7 +195,8 @@ const Islamabad = () => {
                     <div className='text my-auto'>
                         <h2>Al-Shifa Hospital</h2>
                         <h6>F-8 Centorus Mall Islamabad</h6>
-                        <Button>View details</Button>
+                        <Link to='/Shifa' ><Button>View details</Button></Link>
+
 
                     </div>
                 </div>

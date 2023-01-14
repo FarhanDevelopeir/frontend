@@ -12,6 +12,8 @@ import Shifa from './Hospitals/shifa';
 // import 'mdb-react-ui-kit/dist/css/mdb.min.css';
 import "@fortawesome/fontawesome-free/css/all.min.css";
 import Signup from './Components/signup/signup';
+import Timing from './Doctime/timing';
+import Bookpage from './Doctime/bookpage';
 
 
 const router = createBrowserRouter([
@@ -34,6 +36,14 @@ const router = createBrowserRouter([
   {
     path: "signup",
     element: <Signup/>,
+  },
+  {
+    path: "select_time",
+    element: <Timing/>,
+  },
+  {
+    path: "booked",
+    element: <Bookpage />,
   },
 ]);
 
