@@ -71,7 +71,7 @@ const Icons = () => {
           </div>
           <div className='circles'>
             <a href='/#' className='cir-name'><img src={c} alt='sv'></img></a>
-            <a href='/#' className='text'><p>High blood Pressure</p></a>
+            <a href='/#' className='text'><p>Blood Pressure</p></a>
           </div>
           <div className='circles'>
             <a href='/#' className='cir-name'><img src={d} alt='sv'></img></a>

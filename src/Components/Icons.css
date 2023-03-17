@@ -78,6 +78,11 @@
     justify-content: center;
     /* background-color: #f7f7f7; */
   }
+  @media (max-width:1063px) {
+    .sp-inner{
+      width: 100% !important;
+    }
+  }
   
   
   

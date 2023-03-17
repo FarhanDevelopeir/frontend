@@ -2,8 +2,9 @@ import React, { useState } from 'react';
 import { Modal, ModalHeader, ModalBody, Row, Col } from 'reactstrap';
 import Header from '../Components/header'
 import Footer from '../Components/footer'
-import zee from '../images/309669010_828554178158000_1780954544487387833_n.jpg'
+import zee from '../images/bruno-rodrigues-279xIHymPYY-unsplash.jpg'
 import { Link } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom';
 import './timing.css'
 import sunny from '../images/sunny.png'
 import cloud from '../images/clear-sky.png'
@@ -11,6 +12,22 @@ import cloud from '../images/clear-sky.png'
 import { Button } from 'react-bootstrap';
 
 const Doctime = () => {
+// Open
+const [name, setName] = useState('');
+const navigate = useNavigate();
+
+const handleSubmit = (event) => {
+  event.preventDefault();
+  navigate( { state: { name: '' } });
+};
+
+const handleNameChange = (event) => {
+  setName(event.target.value);
+};
+  // Close
+
+
+
   const [modal, setmodal] = useState(false)
   return (
     <div>
@@ -23,7 +40,7 @@ const Doctime = () => {
             <img src={zee} className='img-fluid my-auto' style={{ borderRadius: '50%' }} ></img>
           </div>
           <div className='test my-auto'>
-            <h2>Dr.Khushnood Iqbal</h2>
+            <h2>Dr.Javed Iqbal</h2>
             <h6>Diabetologist, Consultant Physician, Endocrinologist</h6>
             <h6>MBBS, MRCPS (UK), MD (USA)</h6>
 
@@ -53,10 +70,10 @@ const Doctime = () => {
               toggle={() => setmodal(!modal)}
             >
               <ModalHeader toggle={() => setmodal(!modal)} style={{ background: '#1177ca', color: 'white' }}>
-                Appointment with Dr.Khushnood Iqbal
+                Appointment with Dr.Javed Iqbal
               </ModalHeader>
               <ModalBody>
-                <form>
+                <form  onSubmit={handleSubmit}>
                   <Row>
                     <Col>
                       <div>
@@ -67,6 +84,7 @@ const Doctime = () => {
                           style={{ height: '40px' }}
                           type='text'
                           className='form_control w-100 my-2 '
+                          value={name} onChange={handleNameChange}
                         //  placeholder='Enter Your Phone Number'
                         >
                         </input>
@@ -81,7 +99,7 @@ const Doctime = () => {
                         >
                         </input>
 
-                        <Link to='/booked'><Button className='w-100 mb-1 mt-3 bg-warning  ' style={{ height: '50px', border: 'none', color: 'black', fontSize: '21px' }}  >Book Now</Button></Link>
+                       <Link to='/booked'><Button className='w-100 mb-1 mt-3 bg-warning  ' style={{ height: '50px', border: 'none', color: 'black', fontSize: '21px' }}  type='submit' >Book Now</Button></Link>
 
                         
                       </div>

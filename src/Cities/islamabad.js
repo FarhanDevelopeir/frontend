@@ -1,6 +1,5 @@
 import React from 'react'
-import Header from '../Components/header'
-import Footer from '../Components/footer'
+
 import '/node_modules/bootstrap/dist/css/bootstrap.min.css'
 import '/node_modules/bootstrap/dist/css/bootstrap.css'
 import shifa from '../images/download (2).jfif'
@@ -17,7 +16,7 @@ const Islamabad = () => {
     return (
 
         <div>
-            <Header />
+           
             <div class="w-75 mb-5  d-none d-sm-none d-lg-block d-md-block d-xl-block   " style={{ height: '470px', margin: '100px auto', backgroudAttachment: 'fixed' }} >
                 <h1 class=''>Hospitals in Islamabad   </h1>
 
@@ -43,11 +42,10 @@ const Islamabad = () => {
                         <h2>Al-Shifa Hospital</h2>
                         <h6>F-8 Centorus Mall Islamabad</h6>
                         <Link to='/Shifa' ><Button>View details</Button></Link>
-
                     </div>
                 </div>
                 <div className='shifa-2 my-auto' style={{ borderLeft: '3px solid Orange', marginRight: '20px' }}>
-                    <div className='' >
+                    <div className=''>
                         <div className='d-flex p-3'>
                             <img src={map} class='mx-3' style={{ height: '40px' }}></img>
                             <h5>Islamabad</h5>
@@ -55,7 +53,7 @@ const Islamabad = () => {
                         <div className='d-flex p-3'>
                             <img src={doc} class='mx-3' style={{ height: '40px' }}></img>
                             <h5>98 doctors</h5>
-                        </div>
+                        </div> 
                     </div>
                 </div>
 
@@ -101,7 +99,7 @@ const Islamabad = () => {
                         <img src={complex} className='img-fluid my-auto' style={{ borderRadius: '50%' }} ></img>
                     </div>
                     <div className='text my-auto'>
-                        <h2>Al-Shifa Hospital</h2>
+                        <h2>Complex Hospital</h2>
                         <h6>F-8 Centorus Mall Islamabad</h6>
                         <Link to='/Shifa' ><Button>View details</Button></Link>
 
@@ -131,7 +129,7 @@ const Islamabad = () => {
                         <img src={complex} className='img-fluid my-auto' style={{ borderRadius: '50%' }} ></img>
                     </div>
                     <div className='text my-auto'>
-                        <h2>Al-Shifa Hospital</h2>
+                        <h2>Complex Hospital</h2>
                         <h6>F-8 Centorus Mall Islamabad</h6>
                         <Link to='/Shifa' ><Button>View details</Button></Link>
 
@@ -163,7 +161,7 @@ const Islamabad = () => {
                         <img src={PIMS} className='img-fluid my-auto' style={{ borderRadius: '50%'}} ></img>
                     </div>
                     <div className='text my-auto'>
-                        <h2>Al-Shifa Hospital</h2>
+                        <h2>PIMS Hospital</h2>
                         <h6>F-8 Centorus Mall Islamabad</h6>
                         <Link to='/Shifa' ><Button>View details</Button></Link>
 
@@ -193,7 +191,7 @@ const Islamabad = () => {
                         <img src={PIMS} className='img-fluid my-auto' style={{ borderRadius: '50%' }} ></img>
                     </div>
                     <div className='text my-auto'>
-                        <h2>Al-Shifa Hospital</h2>
+                        <h2>PIMS Hospital</h2>
                         <h6>F-8 Centorus Mall Islamabad</h6>
                         <Link to='/Shifa' ><Button>View details</Button></Link>
 
@@ -219,8 +217,7 @@ const Islamabad = () => {
 
 
 
-            <Footer />
-
+        
 
         </div>
     )

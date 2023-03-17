@@ -15,7 +15,7 @@ import doc from '../images/12336740611595341300-128.png'
 const Rawalpindi = () => {
   return (
     <div>
-         <Header />
+        
             <div class="w-75 mb-5  d-none d-sm-none d-lg-block d-md-block d-xl-block   " style={{height:'470px', margin:'100px auto',backgroudAttachment:'fixed' }} >
             <h1  class=''>Hospitals in Rawalpindi   </h1>
 
@@ -209,7 +209,7 @@ const Rawalpindi = () => {
             </div>
 
             {/* -Close */}
-            <Footer />
+          
             
     </div>
   )

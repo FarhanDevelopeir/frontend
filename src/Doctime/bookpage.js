@@ -7,9 +7,14 @@ import { Button } from 'reactstrap';
 import Table from 'react-bootstrap/Table';
 import tick from '../images/images-removebg-preview.png'
 import './bookpage.css'
+import { useLocation } from 'react-router-dom';
 
 
 const Bookpage = () => {
+    // open
+    
+    // close
+
     return (
         <div>
             <Header />
@@ -21,9 +26,9 @@ const Bookpage = () => {
                 <Table striped bordered hover size="xl" className='text-center'>
                     <thead>
                         <tr>
-                          
+                            
                             <th>Patient Name</th>
-                            <td>Junaid Khan</td>
+                            <td>Iftikhar Janjua</td>
                             
                         </tr>
                     </thead>
@@ -39,7 +44,7 @@ const Bookpage = () => {
                         <tr>
                           
                             <th>Date</th>
-                            <td>3 March 2023</td>
+                            <td>16 March 2023</td>
                             
                         </tr>
                     </thead>
@@ -47,7 +52,7 @@ const Bookpage = () => {
                         <tr>
                           
                             <th>Time</th>
-                            <td>3:00 PM</td>
+                            <td>12:00 PM</td>
                             
                         </tr>
                     </thead>
@@ -55,7 +60,7 @@ const Bookpage = () => {
                         <tr>
                           
                             <th>Doctor Name</th>
-                            <td>Dr.Khushnood Iqbal</td>
+                            <td>Dr.Javed Iqbal</td>
                             
                         </tr>
                     </thead>

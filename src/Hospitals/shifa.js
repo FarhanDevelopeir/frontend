@@ -15,9 +15,9 @@ import f from '../images/9251414541647350902-128.png';
 import g from '../images/9963330951595341179-128.png';
 import h from '../images/10295499861529659195-128.png';
 import './shifa.css'
-import farhan from '../images/FB_IMG_1655200645745-modified.png'
-import saad from '../images/3d88cf50-5b2d-4efa-bff4-b369bc594b1d-modified.png'
-import zee from '../images/309669010_828554178158000_1780954544487387833_n.jpg'
+import farhan from '../images/ashkan-forouzani-DPEPYPBZpB8-unsplash.jpg'
+import saad from '../images/download.jfif'
+import zee from '../images/bruno-rodrigues-279xIHymPYY-unsplash.jpg'
 
 
 
@@ -104,7 +104,7 @@ const Shifa = () => {
             </div>
             <div className='circles'>
               <a href='/#' className='cir-name'><img src={c} alt='sv'></img></a>
-              <a href='/#' className='text'><p>High blood Pressure</p></a>
+              <a href='/#' className='text'><p>Blood Pressure</p></a>
             </div>
             <div className='circles'>
               <a href='/#' className='cir-name'><img src={d} alt='sv'></img></a>
@@ -145,7 +145,7 @@ const Shifa = () => {
             <img src={zee} className='img-fluid my-auto' style={{ borderRadius: '50%' }} ></img>
           </div>
           <div className='test my-auto'>
-            <h2>Dr.Khushnood Iqbal</h2>
+            <h2>Dr.Javed Iqbal</h2>
             <h6>Diabetologist, Consultant Physician, Endocrinologist</h6>
             <h6>MBBS, MRCPS (UK), MD (USA)</h6>
 
@@ -183,7 +183,7 @@ const Shifa = () => {
             <img src={zee} className='img-fluid my-auto' style={{ borderRadius: '50%' }} ></img>
           </div>
           <div className='test my-auto'>
-            <h2>Dr.Khushnood Iqbal</h2>
+            <h2>Dr.Javed Iqbal</h2>
             <h6 >Diabetologist, Consultant Physician, Endocrinologist</h6>
             <h6>MBBS, MRCPS (UK), MD (USA)</h6>
 
@@ -225,7 +225,7 @@ const Shifa = () => {
             <img src={farhan} className='img-fluid my-auto' style={{ borderRadius: '50%' }} ></img>
           </div>
           <div className='test my-auto'>
-            <h2>Dr.Muhammad Farhan</h2>
+            <h2>Dr. Smith</h2>
             <h6>Diabetologist, Consultant Physician, Endocrinologist</h6>
             <h6>MBBS, MRCPS (UK), MD (USA)</h6>
 
@@ -263,7 +263,7 @@ const Shifa = () => {
             <img src={farhan} className='img-fluid my-auto' style={{ borderRadius: '50%' }} ></img>
           </div>
           <div className='test my-auto'>
-            <h2>Dr.Muhammad Farhan</h2>
+            <h2>Dr.Smith</h2>
             <h6 >Diabetologist, Consultant Physician, Endocrinologist</h6>
             <h6>MBBS, MRCPS (UK), MD (USA)</h6>
 
@@ -307,7 +307,7 @@ const Shifa = () => {
             <img src={saad} className='img-fluid my-auto' style={{ borderRadius: '50%' }} ></img>
           </div>
           <div className='test my-auto'>
-            <h2>Dr.Saad Ali</h2>
+            <h2>Dr.Ismail</h2>
             <h6>Diabetologist, Consultant Physician, Endocrinologist</h6>
             <h6>MBBS, MRCPS (UK), MD (USA)</h6>
 
@@ -345,7 +345,7 @@ const Shifa = () => {
             <img src={saad} className='img-fluid my-auto' style={{ borderRadius: '50%' }} ></img>
           </div>
           <div className='test my-auto'>
-            <h2>Dr.Saad Ali</h2>
+            <h2>Dr.Ismail</h2>
             <h6 >Diabetologist, Consultant Physician, Endocrinologist</h6>
             <h6>MBBS, MRCPS (UK), MD (USA)</h6>
 
