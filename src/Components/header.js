@@ -236,7 +236,7 @@ const Header = () => {
                   </Dropdown>
                   <Dropdown >
                     <Dropdown.Toggle id="dropdown-basic" style={{ backgroundColor: "#1177ca", border: "none" }}>
-                      Hospitals
+                      Cities
                     </Dropdown.Toggle>
 
                     <Dropdown.Menu>
@@ -259,7 +259,7 @@ const Header = () => {
 
 
 
-                  <Link to="/mainn" ><Nav.Link href="#action1" className='text-white'>Register Hospital</Nav.Link></Link>
+                  <Link to="/mainn" ><Nav.Link href="#action1" className='text-white'> Hospital Dashboard</Nav.Link></Link>
                   <Link to="/User" ><Nav.Link href="#action1" className='text-white'>User Dashboard</Nav.Link></Link>
 
 
@@ -377,6 +377,8 @@ const Header = () => {
 
 
                   <Link to='/Login'><Button className='jbf btn' style={{ background: '#fd9940', border: 'none' }} >SignUp/Login</Button></Link>
+                 <Link to="/HospSignUp"> <Button className='jbf btn' style={{ background: '#fd9940', border: 'none' }} >H-SignUp</Button></Link> 
+
 
 
                   {/* Popup-close */}

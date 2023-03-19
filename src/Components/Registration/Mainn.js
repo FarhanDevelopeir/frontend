@@ -34,20 +34,21 @@ function App() {
             <h2>Al-Shifa Hospital</h2>
             <h6>F-8 Centorus Mall Islamabad</h6>
             {/* <Link to='/Shifa' ><Button>View details</Button></Link> */}
-            {/* <button className='btn text-white w-75' style={{ backgroundColor: '#0b65af' }} >Call Helpline</button> */}
+            <button className='btn text-white w-75' style={{ backgroundColor: '#0b65af' }} >Call Helpline</button>
 
 
           </div>
         </div>
-        <div className='shifa-2 my-auto' style={{ borderLeft: '3px solid Orange', marginRight: '20px' }}>
+        <div className='shifa-2 my-auto p-2' style={{ borderLeft: '3px solid Orange', marginRight: '20px', }}>
           <div className='' >
             <div className='d-flex p-3'>
               <img src={map} class='mx-3' style={{ height: '40px' }}></img>
               <h5>Islamabad</h5>
             </div>
-            <div className='d-flex p-3'>
-              <img src={doc} class='mx-3' style={{ height: '40px' }}></img>
-              <h5>Government</h5>
+            <div className=' h-100 '>
+              <Button className=' w-100 h-100'>Edit Hospital</Button>
+              {/* <img src={doc} class='mx-3' style={{ height: '40px' }}></img>
+              <h5>Government</h5> */}
             </div>
           </div>
         </div>
@@ -55,14 +56,69 @@ function App() {
       </div>
 
 
+      <MDBContainer fluid className=' w-75 rounded ' style={{marginTop:'30px' , marginBottom:"50px"}}>
+
+<MDBRow className=' d-flex justify-content-center align-items-center h-70 '>
+  <MDBCol>
+
+    <MDBCard className='shifa my-4 bg-silver '>
+
+      <MDBRow className='g-0'>
+
+        <MDBCol md='6' className="d-none d-md-block">
+          <MDBCardImage style={{height:'100%'}} src='https://img.freepik.com/premium-photo/interior-hospital-consulting-room-with-medical-eye-test-chart-wheelchair-service-office-ophthalmologic-clinic-visual-examination-equipment-devices-treatment-vision_35148-258.jpg?size=626&ext=jpg&ga=GA1.1.1661947102.1678828742&semt=ais' alt="Sample photo" className="rounded" fluid/>
+        </MDBCol>
+
+        <MDBCol md='6'>
+
+          <MDBCardBody className='text-black d-flex flex-column justify-content-center'>
+            <h3 className="mb-5  fw-bold">Add Hospital Details</h3>
+
+            <MDBRow>
+            <MDBInput wrapperClass='mb-4'placeholder='Hospital Name' label='Hospital Name' size='lg' id='form5' type='text'/>
+
+            
+
+            </MDBRow>
+
+        
+            <MDBRow>
 
 
-    <MDBContainer fluid className='bg-warning w-75 rounded mb-5 mt-5'>
+            </MDBRow>
+
+            <MDBInput wrapperClass='mb-4' placeholder='Hospital City' label='Hospital City' size='lg' id='form4' type='text' />
+            <MDBInput wrapperClass='mb-4' placeholder='Hospital Address' label='Hospital Address' size='lg' id='form5' type='text'/>
+            <MDBInput wrapperClass='mb-4' placeholder='Hospital Contact Number' label='Hospital Address' size='lg' id='form5' type='text'/>
+            <MDBInput wrapperClass='mb-4' placeholder='Hospital Picture' label='Hospital Picture' size='lg' id='form6' type='file'/>
+
+            <div className="d-flex justify-content-end pt-3">
+              {/* <MDBBtn color='light' size='lg'>Reset all</MDBBtn> */}
+              {/* <MDBBtn className='ms-2' color='warning' size='lg'>Submit Doctor form</MDBBtn> */}
+              <Button className='btn btn-warning ' size='lg'>Add Hospital</Button>
+            </div>
+
+          </MDBCardBody>
+
+        </MDBCol>
+      </MDBRow>
+
+    </MDBCard>
+
+  </MDBCol>
+</MDBRow>
+
+</MDBContainer >
+
+
+
+
+    <MDBContainer fluid className=' w-75 rounded mb-5 mt-5'>
 
       <MDBRow className='d-flex justify-content-center align-items-center h-70 '>
         <MDBCol>
 
-          <MDBCard className='my-4 bg-primary '>
+          <MDBCard className='my-4 shifa '>
 
             <MDBRow className='g-0'>
 
@@ -73,7 +129,7 @@ function App() {
               <MDBCol md='6'>
 
                 <MDBCardBody className='text-black d-flex flex-column justify-content-center'>
-                  <h3 className="mb-5 text-white fw-bold">Add Doctors In Tabeeb</h3>
+                  <h3 className="mb-5  fw-bold">Add Doctors In Tabeeb</h3>
 
                   <MDBRow>
 
@@ -87,44 +143,17 @@ function App() {
 
                   </MDBRow>
 
-                  {/* <MDBInput wrapperClass='mb-4'  size='lg' id='form3' type='text'/> */}
-                  {/* <textarea class="form-control"  placeholder='' rows="5" id="comment"> </textarea>
-                  <label>Doctor Information</label> */}
-
+                 
                   <div className='d-md-flex ustify-content-start align-items-center mb-4'>
                     <h6 class="fw-bold mb-0 me-4">Gender: </h6>
                     <MDBRadio name='inlineRadio' id='inlineRadio1' value='option1' label='Female' inline />
                     <MDBRadio name='inlineRadio' id='inlineRadio2' value='option2' label='Male' inline />
-                    {/* <MDBRadio name='inlineRadio' id='inlineRadio3' value='option3' label='Other' inline /> */}
+                  
                   </div>
 
                   <MDBRow>
 
-                    <MDBCol md='6'>
-                      {/* <MDBSelect
-                        className='mb-4'
-                        size='lg'
-                        data={[
-                          { text: 'State', value: 1 },
-                          { text: 'Option 1', value: 2 },
-                          { text: 'Option 2', value: 3 },
-                          { text: 'Option 3', value: 4 }
-                        ]}
-                        /> */}
-                    </MDBCol>
-
-                    <MDBCol md='6'>
-                      {/* <MDBSelect
-                        className='mb-4'
-                        size='lg'
-                        data={[
-                          { text: 'City', value: 1 },
-                          { text: 'Option 1', value: 2 },
-                          { text: 'Option 2', value: 3 },
-                          { text: 'Option 3', value: 4 }
-                        ]}
-                        /> */}
-                    </MDBCol>
+                    
 
                   </MDBRow>
 
@@ -133,8 +162,7 @@ function App() {
                   <MDBInput wrapperClass='mb-4' label='Doctor Img' size='lg' id='form6' type='file'/>
 
                   <div className="d-flex justify-content-end pt-3">
-                    {/* <MDBBtn color='light' size='lg'>Reset all</MDBBtn> */}
-                    {/* <MDBBtn className='ms-2' color='warning' size='lg'>Submit Doctor form</MDBBtn> */}
+                 
                     <Button className='btn btn-warning ' size='lg'>Add Doctor</Button>
                   </div>
 

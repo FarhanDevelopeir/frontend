@@ -7,12 +7,12 @@ import { Link } from 'react-router-dom';
 import React, { Component } from 'react';
 // import { Circle } from 'react-bootstrap-icons';
 
-class Login extends Component {
+class HospSignUp extends Component {
   
   handlesubmit() {
     const result = window.confirm("User Successfully Login In Tabeeb");
     if (result) {
-      window.location.href = "http://localhost:3000/User"; // Replace with your desired URL
+      window.location.href = "http://localhost:3000/RegisterHospital"; // Replace with your desired URL
     }
   }
   
@@ -153,5 +153,5 @@ class Login extends Component {
   }
 }
 
-export default Login;
+export default HospSignUp;
 

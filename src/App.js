@@ -11,6 +11,8 @@ import Timing from './Doctime/timing';
 import Mainn from './Components/Registration/Mainn';
 import Login from './Components/signup/signup';
 import UserDashboard from './Components/Userdashboard/UserDashboard';
+import HospitalRegister from './Components/HospitalRegister/HospitalRegister';
+import HospSignUp from './Components/HospitalRegister/HospSignUp';
 
 const App = () => {
   return (
@@ -26,6 +28,10 @@ const App = () => {
       <Route path="/Shifa" element= {<Shifa/>} />
       <Route path="/Login" element= {<Login/>} />
       <Route path="/User" element= {<UserDashboard/>} />
+      <Route path="/RegisterHospital" element= {<HospitalRegister/>} />
+      <Route path="/HospSignUp" element= {<HospSignUp/>} />
+
+
 
 
 
