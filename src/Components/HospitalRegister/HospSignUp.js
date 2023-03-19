@@ -89,23 +89,24 @@ class HospSignUp extends Component {
                <Card.Body>
                 <div className="mb-3 md-2">
                    <h2 className="fw-bold mb-0 text-center  ">
-                     <h1><img src={logooo} style={{height:'100px', marginTop:'10px', marginRight:'-20px'}} ></img>SignUp In Tabeeb</h1>
+                     <h1><img src={logooo} style={{height:'100px', marginTop:'10px', marginRight:'-20px'}} ></img>Hospital SignUp</h1>
                     
                    </h2>
                    <div className="mb-3">
                      <Form >
-                       {/* <Form.Group className="mb-3" controlId="Name">
-                         <Form.Label className='text-right'>Name</Form.Label>
-                         <Form.Control type="text" style={{height:'47px'}} placeholder="Enter Name" />
-                      </Form.Group> */}
-                      
-                      
-
+               
                       <Form.Group className="mb-3" controlId="formBasicEmail">
                          <Form.Label >
-                           Email address
+                           Hospital Name
                          </Form.Label>
-                         <Form.Control type="email" style={{height:'47px'}} placeholder="Enter email" />
+                         <Form.Control type="text" style={{height:'47px'}} placeholder="Enter Hospital Name" />
+                       </Form.Group>
+
+                       <Form.Group className="mb-3" controlId="formBasicEmail">
+                         <Form.Label >
+                           Hospital Email
+                         </Form.Label>
+                         <Form.Control type="email" style={{height:'47px'}} placeholder="Enter Hospital Email" />
                        </Form.Group>
 
                       <Form.Group
@@ -133,14 +134,7 @@ class HospSignUp extends Component {
                         </Link>
                       </div>
                     </Form>
-                    {/* <div className="mt-3">
-                      <p className="mb-0  text-center">
-                        Already have an account??{' '}
-                        <a href="{''}" className="text-primary fw-bold">
-                          Sign In
-                        </a>
-                      </p>
-                    </div> */}
+                   
                   </div>
                 </div>
               </Card.Body>
