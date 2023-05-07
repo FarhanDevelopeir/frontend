@@ -17,7 +17,6 @@
 
 // import Mainn from './Components/main';
 
-
 // const router = createBrowserRouter([
 //   {
 //     path: "/",
@@ -43,8 +42,8 @@
 //     path: "signup",
 //     element: <Signup/>,
 //   },
-//   
-//   
+//
+//
 // ]);
 
 // const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -54,25 +53,26 @@
 //   </React.StrictMode>
 // );
 
-
 // reportWebVitals();
 
-import React from 'react'
-import ReactDOM from 'react-dom'
-import './index.css'
-import App from './App'
-import reportWebVitals from './reportWebVitals'
-import { BrowserRouter } from 'react-router-dom'
+import React from "react";
+// import ReactDOM from 'react-dom'
+// import ReactDOM from "react-dom/client";
+import { createRoot } from "react-dom/client";
+import "./index.css";
+import App from "./App";
+import reportWebVitals from "./reportWebVitals";
+import { BrowserRouter } from "react-router-dom";
+const rootElement = document.getElementById("root");
+const root = createRoot(rootElement);
 
-
-
-ReactDOM.render(
-<React.StrictMode>
+root.render(
+  <React.StrictMode>
     <BrowserRouter>
-    <App/>
+      <App />
     </BrowserRouter>
-</React.StrictMode>,
- document.getElementById('root')
- );
+  </React.StrictMode>
+  //   document.getElementById("root")
+);
 
 reportWebVitals();

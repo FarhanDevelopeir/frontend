@@ -1,25 +1,42 @@
-import React, { useState } from 'react';
-import { Modal, ModalHeader, ModalBody, Row, Col } from 'reactstrap';
-import './header.css';
-import Button from 'react-bootstrap/Button';
-import Container from 'react-bootstrap/Container';
-import Form from 'react-bootstrap/Form';
-import Nav from 'react-bootstrap/Nav';
-import Navbar from 'react-bootstrap/Navbar';
-import '/node_modules/bootstrap/dist/css/bootstrap.min.css';
-import Offcanvas from 'react-bootstrap/Offcanvas';
-import Dropdown from 'react-bootstrap/Dropdown';
+import React, { useState } from "react";
+import { Modal, ModalHeader, ModalBody, Row, Col } from "reactstrap";
+import "./header.css";
+import Button from "react-bootstrap/Button";
+import Container from "react-bootstrap/Container";
+import Form from "react-bootstrap/Form";
+import Nav from "react-bootstrap/Nav";
+import Navbar from "react-bootstrap/Navbar";
+import "/node_modules/bootstrap/dist/css/bootstrap.min.css";
+import Offcanvas from "react-bootstrap/Offcanvas";
+import Dropdown from "react-bootstrap/Dropdown";
 import { Link } from "react-router-dom";
-import piii from '../images/lloogo.png'
+import piii from "../images/lloogo.png";
 // import firebase from '../firebase';
-import 'react-phone-number-input/style.css'
+import Cookies from "universal-cookie";
+import "react-phone-number-input/style.css";
+import axios from "../axios/Axios";
+
+const cookies = new Cookies();
 
 const Header = () => {
-
   const [modal, setmodal] = useState(false);
+  const user = cookies.get("user");
+  // console.log(user);
+  const logout = () => {
+    console.log(user);
+    axios
+      .post("/auth/logout", { refreshToken: user?.tokens?.refresh?.token })
 
+      .then((res) => {
+        cookies.remove("user", { path: "/" });
+        // window.location.reload();
+        window.location.href = "/";
+      })
+      .catch((err) => {
+        alert(err?.response?.data?.message);
+      });
+  };
   //OTP_NEW_open
-
 
   // handleChange = (e) => {
   //   const { name, value } = e.target
@@ -58,10 +75,7 @@ const Header = () => {
   //     });
   // }
 
-
   //OTP_close
-
-
 
   // const [email, setEmail] = useState();
   // const [password, setpassword] = useState();
@@ -97,8 +111,6 @@ const Header = () => {
   //       // ...
   //     });
   // }
-
-
 
   // OTP login
 
@@ -137,16 +149,37 @@ const Header = () => {
   //   }
   // };
 
-
   // OTP-Login-Close
 
   return (
     <div>
-      {['sm'].map((expand) => (
-        <Navbar key={expand} expand={expand} className="mb-3 position-fixed" style={{ backgroundColor: "#1177ca", top: '0', height: '80px', width: '100%', zIndex: '1' }} >
-          <Container fluid >
-            <Navbar.Brand className='text-white '><Link to='/' class='text-white text-decoration-none'><img src={piii} style={{ height: '50px' , marginRight: '-8px' }}></img>Tabeeb</Link></Navbar.Brand>
-            <Navbar.Toggle aria-controls={`offcanvasNavbar-expand-${expand}`} className='bg-light' />
+      {["sm"].map((expand) => (
+        <Navbar
+          key={expand}
+          expand={expand}
+          className="mb-3 position-fixed"
+          style={{
+            backgroundColor: "#1177ca",
+            top: "0",
+            height: "80px",
+            width: "100%",
+            zIndex: "1",
+          }}
+        >
+          <Container fluid>
+            <Navbar.Brand className="text-white ">
+              <Link to="/" class="text-white text-decoration-none">
+                <img
+                  src={piii}
+                  style={{ height: "50px", marginRight: "-8px" }}
+                ></img>
+                Tabeeb
+              </Link>
+            </Navbar.Brand>
+            <Navbar.Toggle
+              aria-controls={`offcanvasNavbar-expand-${expand}`}
+              className="bg-light"
+            />
             <Navbar.Offcanvas
               id={`offcanvasNavbar-expand-${expand}`}
               aria-labelledby={`offcanvasNavbarLabel-expand-${expand}`}
@@ -159,83 +192,46 @@ const Header = () => {
               </Offcanvas.Header>
               <Offcanvas.Body>
                 <Nav className="justify-content-end flex-grow-1 pe-3">
-
-
-                  {/* <NavDropdown 
-                    title="Doctors"
-                    id={`offcanvasNavbarDropdown-expand-${expand}`}
-                  >
-                   
-                    
-                    <NavDropdown.Item href="#action3">Action</NavDropdown.Item>
-                    <NavDropdown.Item href="#action4">
-                      Another action
-                    </NavDropdown.Item>
-                    <NavDropdown.Divider />
-                    <NavDropdown.Item href="#action5">
-                      Something else here
-                    </NavDropdown.Item>
-                  </NavDropdown> */}
                   <Dropdown>
-                    <Dropdown.Toggle id="dropdown-basic" style={{ backgroundColor: "#1177ca", border: "none" }}>
+                    <Dropdown.Toggle
+                      id="dropdown-basic"
+                      style={{ backgroundColor: "#1177ca", border: "none" }}
+                    >
                       Doctors
                     </Dropdown.Toggle>
 
-                    <Dropdown.Menu className='dropdown-content'>
-                      {/* <Dropdown.Item href="#/action-1">Action</Dropdown.Item>
-        <Dropdown.Item href="#/action-2">Another action</Dropdown.Item>
-        <Dropdown.Item href="#/action-3">Something else</Dropdown.Item> */}
-                      {/* <div class="dropdown-content"> */}
-
+                    <Dropdown.Menu className="dropdown-content">
                       <div>
                         <h6>Find doctor by speciality</h6>
 
-                        <div className='doclist'>
-                          <p><a href='#'>Dermatologist</a></p>
-                          <p><a href='#'>Neurologist</a></p>
-                          <p><a href='#'>Child Specialist</a></p>
-                          <p><a href='#'>Gynecologist</a></p>
-                          <p><a href='#'>Psychiatrist</a></p>
-                          <p><a href='#'>General Physician</a></p>
-
+                        <div className="doclist">
+                          <p>
+                            <a href="#">Dermatologist</a>
+                          </p>
+                          <p>
+                            <a href="#">Neurologist</a>
+                          </p>
+                          <p>
+                            <a href="#">Child Specialist</a>
+                          </p>
+                          <p>
+                            <a href="#">Gynecologist</a>
+                          </p>
+                          <p>
+                            <a href="#">Psychiatrist</a>
+                          </p>
+                          <p>
+                            <a href="#">General Physician</a>
+                          </p>
                         </div>
-
-
                       </div>
-                      {/* <div>
-                        <h6>Find doctor by disease</h6>
-                        
-                          <div className='doclist'>
-                            <p><a href='#'>Coronavirus</a></p>
-                            <p><a href='#'>Diabetes</a></p>
-                            
-                            <p><a href='#'>High blood Pressure</a></p>
-                            <p><a href='#'>Anxiety</a></p>
-                            <p><a href='#'>Constipation</a></p>
-                            <p><a href='#'>General Physician</a></p>
-
-                          </div> 
-                        </div> */}
-                      {/* <div>
-                        <h6>Find doctor by city</h6>
-
-                        <div className='doclist'>
-                          <p><Link to='/islamabad'>Islamabad</Link></p>
-                          <p><Link to='/rawalpindi'>Rawalpindi</Link></p>
-                          <p><a href='#'>Lahore</a></p>
-                          <p><a href='#'>Karachi</a></p>
-
-                        </div>
-
-
-                      </div> */}
-
-
-                      {/* </div> */}
                     </Dropdown.Menu>
                   </Dropdown>
-                  <Dropdown >
-                    <Dropdown.Toggle id="dropdown-basic" style={{ backgroundColor: "#1177ca", border: "none" }}>
+                  <Dropdown>
+                    <Dropdown.Toggle
+                      id="dropdown-basic"
+                      style={{ backgroundColor: "#1177ca", border: "none" }}
+                    >
                       Cities
                     </Dropdown.Toggle>
 
@@ -243,157 +239,121 @@ const Header = () => {
                       <div>
                         <h6>Find doctor by name</h6>
 
-                        <div className='doclist'>
-                          <p><Link to='/islamabad'>Islamabad</Link></p>
-                          <p><Link to='/rawalpindi'>Rawalpindi</Link></p>
-
-
+                        <div className="doclist">
+                          <p>
+                            <Link to="/islamabad">Islamabad</Link>
+                          </p>
+                          <p>
+                            <Link to="/rawalpindi">Rawalpindi</Link>
+                          </p>
                         </div>
-
-
                       </div>
-
                     </Dropdown.Menu>
                   </Dropdown>
 
-
-
-
-                  <Link to="/mainn" ><Nav.Link href="#action1" className='text-white'> Hospital Dashboard</Nav.Link></Link>
-                  <Link to="/User" ><Nav.Link href="#action1" className='text-white'>User Dashboard</Nav.Link></Link>
-
-
+                  <Link to="/mainn">
+                    <Nav.Link href="#action1" className="text-white">
+                      {" "}
+                      Hospital Dashboard
+                    </Nav.Link>
+                  </Link>
+                  <Link to="/User">
+                    <Nav.Link href="#action1" className="text-white">
+                      User Dashboard
+                    </Nav.Link>
+                  </Link>
                 </Nav>
                 <Form className="d-flex">
-                  {/* <Form.Control
-                    type="search"
-                    placeholder="Search"
-                    className="me-2"
-                    aria-label="Search"
-                  /> */}
-                  {/* <Link to='/signup' ><Button className='jbf btn' style={{background:'#fd9940',border:'none'}}  >SignUp/Login</Button></Link> */}
-
-                  {/* Popup-open */}
-
                   <Modal
-                    size='md'
+                    size="md"
                     isOpen={modal}
                     toggle={() => setmodal(!modal)}
                   >
                     <ModalHeader
                       toggle={() => setmodal(!modal)}
-                      style={{ background: '#1177ca', color: 'white' }}
-
-
+                      style={{ background: "#1177ca", color: "white" }}
                     >
                       Welcome to Tabeeb
                     </ModalHeader>
                     <ModalBody>
-
-
                       {/* <form onSubmit={this.onSignInSubmit}> */}
                       <form>
-                        <div id='sign-in-button'> </div>
+                        <div id="sign-in-button"> </div>
                         <Row>
                           <Col>
                             <div>
-                              <label>
-                                Patient Name
-                              </label>
+                              <label>Patient Name</label>
                               <input
-                                style={{ height: '40px' }}
-                                type='text'
-                                className='form_control w-100 my-2 '
-                              //  placeholder='Enter Your Phone Number'
-                              >
-                              </input>
-                              <label>
-                                Patient Phone Number
-                              </label>
+                                style={{ height: "40px" }}
+                                type="text"
+                                className="form_control w-100 my-2 "
+                                //  placeholder='Enter Your Phone Number'
+                              ></input>
+                              <label>Patient Phone Number</label>
                               <input
-                                style={{ height: '40px' }}
-                                type='number'
-                                name='mobile'
-                                className='form_control w-100 my-2 '
+                                style={{ height: "40px" }}
+                                type="number"
+                                name="mobile"
+                                className="form_control w-100 my-2 "
                                 // required onChange={this.handleChange}
-                              //  placeholder='Enter Your Phone Number'
+                                //  placeholder='Enter Your Phone Number'
+                              ></input>
+
+                              <Button
+                                className="w-100 mb-1 mt-3 bg-warning  "
+                                style={{
+                                  height: "50px",
+                                  border: "none",
+                                  color: "black",
+                                  fontSize: "21px",
+                                }}
                               >
-                              </input>
-                              
-
-                              <Button className='w-100 mb-1 mt-3 bg-warning  ' style={{ height: '50px', border: 'none', color: 'black', fontSize: '21px' }}  >Login</Button>
-
-
+                                Login
+                              </Button>
                             </div>
                           </Col>
                         </Row>
                       </form>
-
-                      {/* <Form onSubmit={getOtp} style={{ display: !flag ? "block" : "none" }}>
-                          <Form.Group className="mb-3" controlId="formBasicEmail">
-                            <PhoneInput
-                              defaultCountry="IN"
-                              value={number}
-                              onChange={setNumber}
-                              placeholder="Enter Phone Number"
-                            />
-                            <div id="recaptcha-container"></div>
-                          </Form.Group>
-                          <div className="button-right">
-                            <Link to="/">
-                              <Button variant="secondary">Cancel</Button>
-                            </Link>
-                            &nbsp;
-                            <Button type="submit" variant="primary">
-                              Send Otp
-                            </Button>
-                          </div>
-                        </Form>
-
-                        <Form onSubmit={verifyOtp} style={{ display: flag ? "block" : "none" }}>
-                          <Form.Group className="mb-3" controlId="formBasicOtp">
-                            <Form.Control
-                              type="otp"
-                              placeholder="Enter OTP"
-                              onChange={(e) => setOtp(e.target.value)}
-                            />
-                          </Form.Group>
-                          <div className="button-right">
-                            <Link to="/">
-                              <Button variant="secondary">Cancel</Button>
-                            </Link>
-                            &nbsp;
-                            <Button type="submit" variant="primary">
-                              Verify
-                            </Button>
-                          </div>
-                        </Form> */}
-
                     </ModalBody>
                   </Modal>
-
-
-
-
-
-                  <Link to='/Login'><Button className='jbf btn' style={{ background: '#fd9940', border: 'none' }} >SignUp/Login</Button></Link>
-                 <Link to="/HospSignUp"> <Button className='jbf btn' style={{ background: '#fd9940', border: 'none' }} >H-SignUp</Button></Link> 
-
-
+                  {!user ? (
+                    <>
+                      <Link to="/Singup">
+                        <Button
+                          className="jbf btn"
+                          style={{ background: "#fd9940", border: "none" }}
+                        >
+                          Signup
+                        </Button>
+                      </Link>
+                      <Link to="/Login">
+                        <Button
+                          className="jbf btn mx-2"
+                          style={{ background: "#fd9940", border: "none" }}
+                        >
+                          Login
+                        </Button>
+                      </Link>
+                    </>
+                  ) : (
+                    <Button
+                      onClick={logout}
+                      className="jbf btn"
+                      style={{ background: "#fd9940", border: "none" }}
+                    >
+                      Logout
+                    </Button>
+                  )}
 
                   {/* Popup-close */}
-
                 </Form>
               </Offcanvas.Body>
             </Navbar.Offcanvas>
           </Container>
         </Navbar>
       ))}
-
-
-
     </div>
-  )
-}
+  );
+};
 
-export default Header
+export default Header;

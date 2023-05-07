@@ -1,37 +1,39 @@
 import { Col, Button, Row, Container, Card, Form } from "react-bootstrap";
+import Cookies from "universal-cookie";
 
-import logooo from "../../images/lloogo.png";
+import logooo from "../images/lloogo.png";
 import { Link, useNavigate } from "react-router-dom";
 import { useEffect, useRef, useState } from "react";
-// import axios from "axios";
-import axios from "../../axios/Axios";
+import axios from "../axios/Axios";
+
+const cookies = new Cookies();
 // import { Circle } from 'react-bootstrap-icons';
 
-const Signup = () => {
-  const navigate = useNavigate();
+const Login = () => {
   const [errorMessage, setErrorMessage] = useState("");
-
-  const [register, setRegister] = useState({
-    name: "",
+  const [login, setLogin] = useState({
     email: "",
     password: "",
   });
-
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setRegister({ ...register, [name]: value });
+    setLogin({ ...login, [name]: value });
   };
-
   const handlesubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post("/auth/register", register);
-      let result = response.data;
+      const res = await axios.post("/auth/login", login);
+      let result = res.data;
       console.log(result);
-      alert("User Successfully Registerd In Tabeeb");
-      navigate("/Login");
+      cookies.set("user", result, { path: "/" });
+      if (result.user.role === "admin") {
+        alert("Admin Successfully Login In Tabeeb");
+        window.location.href = "/mainn";
+      } else {
+        alert("User Successfully Login In Tabeeb");
+        window.location.href = "/";
+      }
     } catch (error) {
-      console.error(error);
       setErrorMessage(error.response.data.message);
     }
   };
@@ -144,7 +146,7 @@ const Signup = () => {
                           marginRight: "-20px",
                         }}
                       ></img>
-                      SignUp In Tabeeb
+                      Login In Tabeeb
                     </h1>
                   </h2>
                   <div className="mb-3">
@@ -154,54 +156,39 @@ const Signup = () => {
                          <Form.Control type="text" style={{height:'47px'}} placeholder="Enter Name" />
                       </Form.Group> */}
 
-                      <Form.Group
-                        className="mb-3"
-                        // controlId="formBasicEmail"
-                      >
-                        <Form.Label>Name</Form.Label>
+                      <Form.Group className="mb-3" controlId="formBasicEmail">
+                        <Form.Label>Email address</Form.Label>
                         <Form.Control
-                          type="text"
+                          type="email"
                           style={{ height: "47px" }}
-                          placeholder="Enter name"
-                          name="name"
-                          value={register.name}
+                          placeholder="Enter email"
+                          name="email"
+                          value={login.email}
                           onChange={handleChange}
                         />
                       </Form.Group>
 
                       <Form.Group
                         className="mb-3"
-                        // controlId="formBasicPassword"
-                      >
-                        <Form.Label>Email</Form.Label>
-                        <Form.Control
-                          type="email"
-                          style={{ height: "47px" }}
-                          placeholder="Enter email"
-                          name="email"
-                          value={register.email}
-                          onChange={handleChange}
-                        />
-                      </Form.Group>
-                      <Form.Group
-                        className="mb-3"
-                        // controlId="formBasicPassword"
+                        controlId="formBasicPassword"
                       >
                         <Form.Label>Password</Form.Label>
                         <Form.Control
                           type="password"
                           style={{ height: "47px" }}
-                          placeholder="Enter password"
+                          placeholder="Password"
                           name="password"
-                          value={register.password}
+                          value={login.password}
                           onChange={handleChange}
                         />
                       </Form.Group>
+
                       <Form.Group
                         className="mb-3"
                         controlId="formBasicCheckbox"
                       ></Form.Group>
                       <div className="d-grid">
+                        {/* <Link to="/User"> */}
                         <Button
                           variant="warning"
                           className="mt-2 w-100"
@@ -209,7 +196,7 @@ const Signup = () => {
                           type="submit"
                           onClick={handlesubmit}
                         >
-                          Create Account
+                          Login
                         </Button>
                         {errorMessage && (
                           <div
@@ -225,14 +212,23 @@ const Signup = () => {
                             ></button>
                           </div>
                         )}
+                        {/* </Link> */}
                       </div>
                       <p className="mt-2">
-                        Already have an account?
-                        <Link className="text-white ms-1" to="/Login">
-                          Login
+                        Don,t have an account?
+                        <Link className="text-white ms-1" to="/Singup">
+                          Signup
                         </Link>
                       </p>
                     </Form>
+                    {/* <div className="mt-3">
+                      <p className="mb-0  text-center">
+                        Already have an account??{' '}
+                        <a href="{''}" className="text-primary fw-bold">
+                          Sign In
+                        </a>
+                      </p>
+                    </div> */}
                   </div>
                 </div>
               </Card.Body>
@@ -244,4 +240,4 @@ const Signup = () => {
   );
 };
 
-export default Signup;
+export default Login;
