@@ -4,7 +4,16 @@ import map from "../../images/8350944451595341180-128.png";
 import { Button } from "react-bootstrap";
 import zee from "../../images/bruno-rodrigues-279xIHymPYY-unsplash.jpg";
 import axios from "../../axios/Axios";
+
 import { Link } from "react-router-dom";
+// /  open booking cancel method  /
+// import { Axios } from "axios";
+
+import Table from "react-bootstrap/Table";
+import { useLocation, useParams } from "react-router-dom";
+
+
+// /  close booking cancel method / 
 import {
   MDBBtn,
   MDBContainer,
@@ -22,6 +31,30 @@ function App() {
   const navigate = useNavigate();
   const [errorMessage, setErrorMessage] = useState("");
   const [doctorError, setDoctorerror] = useState("");
+  // open booking cancel method /
+  const [phonebook, setPhonebook] = useState([])
+  // useEffect(() => {
+  //   Axios.get('http://localhost:8080/get-phone').then(res => {
+  //     setPhonebook(res.data.data.phoneNumbers)
+  //   })
+  // },[])
+
+  const [appointment, setAppointment] = useState({});
+  const params = useParams();
+  useEffect(() => {
+    getBookingDetail();
+  }, []);
+  const getBookingDetail = async () => {
+    try {
+      const response = await axios.get(`/mainn/${params.id}`);
+      setAppointment(response.data);
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
+
+  // close booking cancel method / / 
 
   // Hospital Details /////////////////////////
   const [hospitals, setHospitals] = useState([]);
@@ -628,6 +661,50 @@ function App() {
           </div>
         </div>
       </div>
+
+      {/* booking delete process-open */}
+      {phonebook.map((val,key) => {
+          return <div key={key} className="phone" >
+           <Table striped bordered hover size="xl" className="text-center">
+          <thead>
+            <tr>
+              <th>Patient Name</th>
+              <td>{appointment.name}</td>
+            </tr>
+          </thead>
+          <thead>
+            <tr>
+              <th>Patient Number</th>
+              <td>{appointment.phone}</td>
+            </tr>
+          </thead>
+          <thead>
+            <tr>
+              <th>Date</th>
+              <td>{appointment.date} 2023</td>
+            </tr>
+          </thead>
+          <thead>
+            <tr>
+              <th>Time</th>
+              <td>{appointment.time}</td>
+            </tr>
+          </thead>
+          <thead>
+            <tr>
+              <th>Doctor Name</th>
+              <td>
+                {appointment.doctorName}
+              </td>
+            </tr>
+          </thead>
+          
+        </Table>
+          </div>
+        })
+      }
+      {/* booking delete process-closs */}
+
     </>
   );
 }

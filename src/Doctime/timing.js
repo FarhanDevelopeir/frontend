@@ -25,43 +25,43 @@ const Doctime = () => {
   const dateApi = [
     {
       id: 1,
-      day: "Today",
-      date: "26 March",
+      day: "Fri",
+      date: "12 May",
     },
     {
       id: 2,
-      day: "Mon",
-      date: "27 March",
+      day: "Sat",
+      date: "27 May",
     },
     {
       id: 3,
-      day: "Tue",
-      date: "28 March",
+      day: "Sun",
+      date: "28 May",
     },
     {
       id: 4,
-      day: "Wed",
-      date: "29 March",
+      day: "Mon",
+      date: "29 May",
     },
     {
       id: 5,
-      day: "Thur",
-      date: "30 March",
+      day: "Tues",
+      date: "30 May",
     },
     {
       id: 6,
-      day: "Fri",
-      date: "31 March",
+      day: "Wed",
+      date: "31 May",
     },
     {
       id: 7,
-      day: "Sat",
-      date: "1 April",
+      day: "Thur",
+      date: "1 May",
     },
     {
       id: 8,
-      day: "Sun",
-      date: "2 April",
+      day: "Fri",
+      date: "2 May",
     },
   ];
   const morning = ["10:00", "10:30", "11:00", "11:30", "11:45"];
